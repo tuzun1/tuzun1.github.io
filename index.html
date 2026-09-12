@@ -147,8 +147,8 @@
       <h3 class="group-title">Vehicle Systems &amp; Power Electronics <span class="group-org">— UMAKİT</span></h3>
 
       <article class="project">
-        <div class="project-media" data-img="telemetry">
-          <div class="diagram-placeholder">4-board stackable PCB · CAN · MQTT/TLS</div>
+        <div class="project-media">
+          <img src="assets/telemetry-module.jpg" alt="Assembled 4-board telemetry module mounted on the competition vehicle">
         </div>
         <div class="project-body">
           <h4>Modular Multi-Board Vehicle Telemetry System</h4>
@@ -157,12 +157,17 @@
           <p>Acquires real-time telemetry — GPS position, motor performance, battery status — and transmits it over MQTT/TLS to a live web dashboard for race strategy monitoring. Fully assembled, tested, and deployed on the competition vehicle.</p>
           <div class="tags"><span>STM32</span><span>ESP32-C3</span><span>CAN bus</span><span>MQTT/TLS</span><span>KiCad</span></div>
           <a class="project-link" href="https://github.com/tuzun1/umakit-ev-telemetry" target="_blank" rel="noopener">View repository →</a>
+          <div class="gallery">
+            <figure><img src="assets/telemetry-board-product.jpg" alt="Assembled ESP32-C3/GPS gateway board"><figcaption>Gateway board</figcaption></figure>
+            <figure><img src="assets/telemetry-dashboard.jpg" alt="Live web dashboard showing GPS track and telemetry channels"><figcaption>Live telemetry dashboard</figcaption></figure>
+            <figure><img src="assets/power-circuit-test.jpg" alt="Bench test of the power management board with multimeter"><figcaption>Power board bring-up</figcaption></figure>
+          </div>
         </div>
       </article>
 
       <article class="project">
-        <div class="project-media" data-img="bldc">
-          <div class="diagram-placeholder">Hall sensors → STM32 → Gate driver → BLDC motor</div>
+        <div class="project-media">
+          <img src="assets/bldc-board.jpg" alt="BLDC motor driver board wired to the Mitsuba M1048R motor">
         </div>
         <div class="project-body">
           <h4>BLDC Motor Driver Firmware</h4>
@@ -170,6 +175,9 @@
           <p>Firmware for a brushless DC motor driver controlling a Mitsuba M1048R motor on an STM32 microcontroller. Implemented Hall-sensor-based commutation for rotor position sensing, dead-time tuning in the gate driver stage to prevent shoot-through, and smooth throttle ramping for controlled acceleration.</p>
           <p>Measured and tuned dead-time to <strong>~120 ns</strong> via oscilloscope characterization at a <strong>~7.8 kHz</strong> switching frequency, eliminating shoot-through across the full switching cycle.</p>
           <div class="tags"><span>STM32</span><span>Motor control</span><span>Gate driver design</span><span>Oscilloscope characterization</span></div>
+          <div class="gallery gallery-1">
+            <figure><img src="assets/bldc-oscilloscope.jpg" alt="Oscilloscope capture of the ~120ns dead-time measurement"><figcaption>Dead-time measurement, ~7.8 kHz switching</figcaption></figure>
+          </div>
         </div>
       </article>
 
@@ -200,10 +208,13 @@
   <section id="education" class="section alt">
     <div class="wrap">
       <h2><span class="num">04</span> Education</h2>
-      <div class="edu-card">
-        <h3>Bursa Uludağ University</h3>
-        <p class="meta">2023–2026</p>
-        <p>B.Sc. Computer Engineering, minor in Electrical &amp; Electronics Engineering. Ranked <strong>3rd in department</strong> (top 2.5%) and <strong>6th faculty-wide</strong> (top 0.6%) with a <strong>3.70/4.00</strong> GPA.</p>
+      <div class="edu-card edu-card-with-image">
+        <img src="assets/graduation.jpg" alt="Graduation ceremony at Bursa Uludağ University, 2026">
+        <div>
+          <h3>Bursa Uludağ University</h3>
+          <p class="meta">2023–2026</p>
+          <p>B.Sc. Computer Engineering, minor in Electrical &amp; Electronics Engineering. Ranked <strong>3rd in department</strong> (top 2.5%) and <strong>6th faculty-wide</strong> (top 0.6%) with a <strong>3.70/4.00</strong> GPA.</p>
+        </div>
       </div>
     </div>
   </section>
