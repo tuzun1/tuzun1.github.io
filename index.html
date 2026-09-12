@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio of Murat Tüzün — embedded systems, power electronics and robotics engineering projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,7 +42,7 @@
 
   <section id="about" class="section">
     <div class="wrap">
-      <h2><span class="num">01</span> About</h2>
+      <h2>About</h2>
       <p class="lede">R&amp;D engineer working on industrial bin-picking automation at <strong>Beyçelik Gestamp</strong>, and President &amp; technical lead of <strong>UMAKİT</strong>, a university engineering team competing in the Shell Eco-marathon Urban Concept class. Computer Engineering graduate (Electrical &amp; Electronics Engineering minor) from Bursa Uludağ University, ranked 3rd in department (top 2.5%) and 6th faculty-wide (top 0.6%) with a 3.70/4.00 GPA.</p>
       <p>My work spans robotics perception and motion, power electronics, embedded firmware, and PCB design — usually the same project, end to end: from selecting a sensor and drawing the schematic, to writing the low-level firmware and validating it with an oscilloscope.</p>
     </div>
@@ -50,7 +50,7 @@
 
   <section id="skills" class="section alt">
     <div class="wrap">
-      <h2><span class="num">02</span> Skills</h2>
+      <h2>Skills</h2>
       <div class="skills-grid">
         <div class="skill-card">
           <h3>Embedded Systems &amp; Firmware</h3>
@@ -114,11 +114,38 @@
 
   <section id="projects" class="section">
     <div class="wrap">
-      <h2><span class="num">03</span> Projects</h2>
+      <h2>Projects</h2>
+
+      <div class="project-index">
+        <p class="project-index-title">Project Index <span>(click to jump)</span></p>
+        <div class="project-index-cols">
+          <div>
+            <p class="project-index-cat">Industrial Robotics &amp; Automation <span class="group-org">— Beyçelik Gestamp</span></p>
+            <ul>
+              <li><a href="#bin-picking">Bin-Picking Automation System</a></li>
+              <li><a href="#pick-release">Counted Pick-and-Release Cell</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="project-index-cat">Vehicle Systems &amp; Power Electronics <span class="group-org">— UMAKİT</span></p>
+            <ul>
+              <li><a href="#telemetry">Modular Multi-Board Vehicle Telemetry System</a></li>
+              <li><a href="#bldc">BLDC Motor Driver Firmware</a></li>
+              <li><a href="#tubitak">Fuel Cell / Supercapacitor Hybrid Power Management</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="project-index-cat">Leadership</p>
+            <ul>
+              <li><a href="#leadership">President &amp; Technical Lead, UMAKİT</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       <h3 class="group-title">Industrial Robotics &amp; Automation <span class="group-org">— Beyçelik Gestamp</span></h3>
 
-      <article class="project">
+      <article class="project" id="bin-picking">
         <div class="project-media" data-img="bin-picking">
           <div class="diagram-placeholder">Fairino FR5 · Jetson AGX Thor · Basler blaze-101</div>
         </div>
@@ -126,12 +153,15 @@
           <h4>Bin-Picking Automation System</h4>
           <p class="meta">R&amp;D Engineer · 2-person team · In progress</p>
           <p>An industrial bin-picking cell built on a Fairino FR5 robot arm with FRC100 controller, an NVIDIA Jetson AGX Thor, and a Basler blaze-101 ToF 3D camera, targeting a fast cycle time from image capture to part placement on metal brackets.</p>
-          <p>Benchmarked monocular depth models — MiDaS, DPT-Hybrid, and Depth Anything V2 — against real part images for grasp-point detection, and built out Modbus TCP communication between the Estun Codroid robot controller and the Jetson/PC.</p>
-          <div class="tags"><span>Jetson AGX Thor</span><span>Basler blaze-101</span><span>YOLO / FoundationPose</span><span>Modbus TCP</span><span>CUDA</span></div>
+          <details class="more">
+            <summary>More details</summary>
+            <p>Benchmarked monocular depth models — MiDaS, DPT-Hybrid, and Depth Anything V2 — against real part images for grasp-point detection, and built out Modbus TCP communication between the Estun Codroid robot controller and the Jetson/PC.</p>
+            <div class="tags"><span>Jetson AGX Thor</span><span>Basler blaze-101</span><span>YOLO / FoundationPose</span><span>Modbus TCP</span><span>CUDA</span></div>
+          </details>
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="pick-release">
         <div class="project-media" data-img="pick-release">
           <div class="diagram-placeholder">IR/photoelectric sensors · V-divider · load cells</div>
         </div>
@@ -139,14 +169,17 @@
           <h4>Counted Pick-and-Release Cell</h4>
           <p class="meta">R&amp;D Engineer</p>
           <p>A cobot/industrial robot picks metallic parts from a source bin and releases them into a destination container — engineered for 100% verified transfer-count accuracy rather than precision placement.</p>
-          <p>Hardware concept: paired through-beam IR/photoelectric sensors at each container opening for directional (in/out) detection, plus a V-shaped physical divider that mechanically guarantees correct routing. Load cells serve as an independent cross-check, with time-gating and debounce logic to reject gripper interference.</p>
-          <div class="tags"><span>Photoelectric sensing</span><span>Load cells</span><span>Mechanical design</span></div>
+          <details class="more">
+            <summary>More details</summary>
+            <p>Hardware concept: paired through-beam IR/photoelectric sensors at each container opening for directional (in/out) detection, plus a V-shaped physical divider that mechanically guarantees correct routing. Load cells serve as an independent cross-check, with time-gating and debounce logic to reject gripper interference.</p>
+            <div class="tags"><span>Photoelectric sensing</span><span>Load cells</span><span>Mechanical design</span></div>
+          </details>
         </div>
       </article>
 
       <h3 class="group-title">Vehicle Systems &amp; Power Electronics <span class="group-org">— UMAKİT</span></h3>
 
-      <article class="project">
+      <article class="project" id="telemetry">
         <div class="project-media">
           <img src="assets/telemetry-module.jpg" alt="Assembled 4-board telemetry module mounted on the competition vehicle">
         </div>
@@ -154,18 +187,21 @@
           <h4>Modular Multi-Board Vehicle Telemetry System</h4>
           <p class="meta">Technical Lead · 2025–2026 · Shell Eco-marathon Europe</p>
           <p>A 4-board stackable PCB system for real-time telemetry on UMAKİT's Shell Eco-marathon competition vehicle: a wireless/GPS gateway board (ESP32-C3 + u-blox NEO-M9N), an STM32-based main controller, a sensor interface board, and a dedicated power management board, connected via a compact standoff stack architecture.</p>
-          <p>Acquires real-time telemetry — GPS position, motor performance, battery status — and transmits it over MQTT/TLS to a live web dashboard for race strategy monitoring. Fully assembled, tested, and deployed on the competition vehicle.</p>
-          <div class="tags"><span>STM32</span><span>ESP32-C3</span><span>CAN bus</span><span>MQTT/TLS</span><span>KiCad</span></div>
-          <a class="project-link" href="https://github.com/tuzun1/umakit-ev-telemetry" target="_blank" rel="noopener">View repository →</a>
-          <div class="gallery">
-            <figure><img src="assets/telemetry-board-product.jpg" alt="Assembled ESP32-C3/GPS gateway board"><figcaption>Gateway board</figcaption></figure>
-            <figure><img src="assets/telemetry-dashboard.jpg" alt="Live web dashboard showing GPS track and telemetry channels"><figcaption>Live telemetry dashboard</figcaption></figure>
-            <figure><img src="assets/power-circuit-test.jpg" alt="Bench test of the power management board with multimeter"><figcaption>Power board bring-up</figcaption></figure>
-          </div>
+          <details class="more">
+            <summary>More details</summary>
+            <p>Acquires real-time telemetry — GPS position, motor performance, battery status — and transmits it over MQTT/TLS to a live web dashboard for race strategy monitoring. Fully assembled, tested, and deployed on the competition vehicle.</p>
+            <div class="tags"><span>STM32</span><span>ESP32-C3</span><span>CAN bus</span><span>MQTT/TLS</span><span>KiCad</span></div>
+            <a class="project-link" href="https://github.com/tuzun1/umakit-ev-telemetry" target="_blank" rel="noopener">View repository →</a>
+            <div class="gallery">
+              <figure><img src="assets/telemetry-board-product.jpg" alt="Assembled ESP32-C3/GPS gateway board"><figcaption>Gateway board</figcaption></figure>
+              <figure><img src="assets/telemetry-dashboard.jpg" alt="Live web dashboard showing GPS track and telemetry channels"><figcaption>Live telemetry dashboard</figcaption></figure>
+              <figure><img src="assets/power-circuit-test.jpg" alt="Bench test of the power management board with multimeter"><figcaption>Power board bring-up</figcaption></figure>
+            </div>
+          </details>
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="bldc">
         <div class="project-media">
           <img src="assets/bldc-board.jpg" alt="BLDC motor driver board wired to the Mitsuba M1048R motor">
         </div>
@@ -173,32 +209,43 @@
           <h4>BLDC Motor Driver Firmware</h4>
           <p class="meta">Technical Lead · UMAKİT, 2025–2026</p>
           <p>Firmware for a brushless DC motor driver controlling a Mitsuba M1048R motor on an STM32 microcontroller. Implemented Hall-sensor-based commutation for rotor position sensing, dead-time tuning in the gate driver stage to prevent shoot-through, and smooth throttle ramping for controlled acceleration.</p>
-          <p>Measured and tuned dead-time to <strong>~120 ns</strong> via oscilloscope characterization at a <strong>~7.8 kHz</strong> switching frequency, eliminating shoot-through across the full switching cycle.</p>
-          <div class="tags"><span>STM32</span><span>Motor control</span><span>Gate driver design</span><span>Oscilloscope characterization</span></div>
-          <div class="gallery gallery-1">
-            <figure><img src="assets/bldc-oscilloscope.jpg" alt="Oscilloscope capture of the ~120ns dead-time measurement"><figcaption>Dead-time measurement, ~7.8 kHz switching</figcaption></figure>
-          </div>
+          <details class="more">
+            <summary>More details</summary>
+            <p>Measured and tuned dead-time to <strong>~120 ns</strong> via oscilloscope characterization at a <strong>~7.8 kHz</strong> switching frequency, eliminating shoot-through across the full switching cycle.</p>
+            <div class="tags"><span>STM32</span><span>Motor control</span><span>Gate driver design</span><span>Oscilloscope characterization</span></div>
+            <div class="gallery gallery-1">
+              <figure><img src="assets/bldc-oscilloscope.jpg" alt="Oscilloscope capture of the ~120ns dead-time measurement"><figcaption>Dead-time measurement, ~7.8 kHz switching</figcaption></figure>
+            </div>
+          </details>
         </div>
       </article>
 
-      <article class="project">
+      <article class="project" id="tubitak">
         <div class="project-media" data-img="tubitak">
           <div class="diagram-placeholder">Fuel cell + supercapacitor hybrid power management</div>
         </div>
         <div class="project-body">
           <h4>Fuel Cell / Supercapacitor Hybrid Power Management System</h4>
           <p class="meta">Principal Investigator · TÜBİTAK 2209-B · with FEV Türkiye</p>
-          <p>Principal Investigator on a TÜBİTAK 2209-B funded research project — <em>"Elektrikli Araçlar İçin Yakıt Hücresi–Süper Kapasitör Hibrit Güç Yönetim Sistemi Geliştirilmesi"</em> — developing a rule-based hybrid power management system for electric vehicles within UMAKİT, in partnership with FEV Türkiye. Next phase extends the control system with a learning-based control layer.</p>
-          <div class="tags"><span>Fuel cells</span><span>Supercapacitors</span><span>Power management</span><span>Control systems</span></div>
+          <p>Principal Investigator on a TÜBİTAK 2209-B funded research project — <em>"Elektrikli Araçlar İçin Yakıt Hücresi–Süper Kapasitör Hibrit Güç Yönetim Sistemi Geliştirilmesi"</em> — developing a rule-based hybrid power management system for electric vehicles within UMAKİT, in partnership with FEV Türkiye.</p>
+          <details class="more">
+            <summary>More details</summary>
+            <p>Next phase extends the rule-based control system with a learning-based control layer.</p>
+            <div class="tags"><span>Fuel cells</span><span>Supercapacitors</span><span>Power management</span><span>Control systems</span></div>
+          </details>
         </div>
       </article>
 
       <h3 class="group-title">Leadership</h3>
-      <article class="project project-leadership">
+      <article class="project project-leadership" id="leadership">
         <div class="project-body full-width">
           <h4>President &amp; Technical Lead, UMAKİT</h4>
           <p class="meta">2023–present</p>
-          <p>Leading UMAKİT, a student electric vehicle engineering team competing in Shell Eco-marathon Europe's Urban Concept class. Set technical strategy and manage team sustainability and cross-functional coordination across electronics, firmware, and software sub-teams. Three-plus years of hands-on bare-metal lab work — oscilloscope and multimeter debugging, circuit testing, schematic reading, PCB design, soldering, and wire-harness work — alongside sponsorship and partnership outreach for the team.</p>
+          <p>Leading UMAKİT, a student electric vehicle engineering team competing in Shell Eco-marathon Europe's Urban Concept class. Set technical strategy and manage team sustainability and cross-functional coordination across electronics, firmware, and software sub-teams.</p>
+          <details class="more">
+            <summary>More details</summary>
+            <p>Three-plus years of hands-on bare-metal lab work — oscilloscope and multimeter debugging, circuit testing, schematic reading, PCB design, soldering, and wire-harness work — alongside sponsorship and partnership outreach for the team.</p>
+          </details>
         </div>
       </article>
 
@@ -207,7 +254,7 @@
 
   <section id="education" class="section alt">
     <div class="wrap">
-      <h2><span class="num">04</span> Education</h2>
+      <h2>Education</h2>
       <div class="edu-card edu-card-with-image">
         <img src="assets/graduation.jpg" alt="Graduation ceremony at Bursa Uludağ University, 2026">
         <div>
@@ -221,7 +268,7 @@
 
   <section id="contact" class="section contact-section">
     <div class="wrap">
-      <h2><span class="num">05</span> Contact</h2>
+      <h2>Contact</h2>
       <p class="lede">Open to embedded systems, robotics, and power electronics roles — always happy to talk shop about motor control, PCB design, or robot perception.</p>
       <div class="hero-links">
         <a class="btn btn-primary" href="mailto:murattuzun0@gmail.com">murattuzun0@gmail.com</a>
